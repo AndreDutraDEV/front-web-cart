@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+	<title>Frontend Mentor | Product list with cart</title>
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		.attribution {
+			font-size: 11px;
+			text-align: center;
+		}
+
+		.attribution a {
+			color: hsl(228, 45%, 44%);
+		}
+	</style>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<main>
+		<h1 class="primary_h">Desserts</h1>
+		<section class="showcase-prods">
+			<div class="container-prod">
+				<div class="item_box" id="item_product_list_0">
+					<div class="view_item">
+						<img src="assets/images/image-waffle-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">
+							<img class="cart_add_icon" src="assets/images/icon-add-to-cart.svg" alt="">
+							Add to Cart
+							<span class="handle_in_cart">
+								<span class="btn_decrement_prod">
+									<img src="assets/images/icon-decrement-quantity.svg" alt="">
+								</span>
+								<p class="qtd_item_in_cart">1</p>
+								<span class="btn_increment_prod">
+									<img src="assets/images/icon-increment-quantity.svg" alt="">
+								</span>
+							</span>
+						</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Waffle</span>
+						<h5 class="title_prod">Waffle with Berries</h5>
+						<span class="price_prod">6.50</span>
+					</div>
+				</div>
+				<!-- <div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-creme-brulee-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Crème Brûlée</span>
+						<h5 class="title_prod">Vanilla Bean Crème Brûlée</h5>
+						<span class="price_prod">7.00</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-macaron-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Macaron</span>
+						<h5 class="title_prod">Macaron Mix of Five</h5>
+						<span class="price_prod">8.00</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-tiramisu-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Tiramisu</span>
+						<h5 class="title_prod">Classic Tiramisu</h5>
+						<span class="price_prod">5.50</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-baklava-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Baklava</span>
+						<h5 class="title_prod">Pistachio Baklava</h5>
+						<span class="price_prod">4.00</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-meringue-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Pie</span>
+						<h5 class="title_prod">Lemon Meringue Pie</h5>
+						<span class="price_prod">5.00</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-cake-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Cake</span>
+						<h5 class="title_prod">Red Velvet Cake</h5>
+						<span class="price_prod">4.50</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-brownie-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Brownie</span>
+						<h5 class="title_prod">Salted Caramel Brownie</h5>
+						<span class="price_prod">4.50</span>
+					</div>
+				</div>
+				<div class="item_box">
+					<div class="view_item">
+						<img src="assets/images/image-panna-cotta-desktop.jpg" alt="" class="img_item">
+						<button class="btn_add_prod">Add to Cart</button>
+					</div>
+					<div class="desc_prod">
+						<span class="categ_item">Panna Cotta</span>
+						<h5 class="title_prod">Vanilla Panna Cotta</h5>
+						<span class="price_prod">6.50</span>
+					</div>
+				</div> -->
+			</div>
+			<article class="aside_cart">
+				<h2>Your Cart (<span id="cart-quantity">0</span>)</h2>
+				<ul class="cart_list">
+					<!-- <li class="item_cart">
+            <div class="desc_item_cart">
+              <p class="name_item_cart">Classic Tiamissu</p>
+              <p class="infor_order_item_cart">
+                <span class="qtd_item_cart">0</span>
+                <span class="unit_item_cart_price">5.50</span>
+                <span class="total_item_cart_price">5.50</span>
+              </p>
+            </div>
+            <button class="btn_remove_item_cart"><img src="assets/images/icon-remove-item.svg" alt="X"></button>
+          </li> -->
+					<!-- <p>Your added items will appear here</p> -->
+				</ul>
+				<div class="footer_cart">
+					<div class="total_info"><span class="order_total_text">Order Total</span><span
+							class="total_price_cart">0</span></div>
+					<div class="msg_in_cart"><img style="margin-right: 8px;" src="assets/images/icon-carbon-neutral.svg"
+							alt="Green">This a <b style="margin: 0 5px;">carbon-neutral</b> delivery</div>
+					<button class="btn_confirm_order">
+						Confirm Order
+					</button>
+				</div>
+			</article>
+		</section>
+	</main>
+	<div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+		Coded by <a href="#">Your Name Here</a>.
+	</div>
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", async () => {
+			async function loadProducts() {
+				const response = await fetch('data.json');
+				const products = await response.json();
+
+				const productContainer = document.querySelector(".container-prod");
+				productContainer.innerHTML = ""; // Clear existing content
+
+				products.forEach((product, index) => {
+					const productHTML = `
+						<div class="item_box" id="item_product_list_${index}">
+							<div class="view_item">
+								<img src="${product.image.desktop}" alt="${product.name}" class="img_item">
+								<button class="btn_add_prod">
+									<img class="cart_add_icon" src="assets/images/icon-add-to-cart.svg" alt="">
+									Add to Cart
+									<span class="handle_in_cart">
+										<span class="btn_decrement_prod">
+											<img src="assets/images/icon-decrement-quantity.svg" alt="">
+										</span>
+										<p class="qtd_item_in_cart">1</p>
+										<span class="btn_increment_prod">
+											<img src="assets/images/icon-increment-quantity.svg" alt="">
+										</span>
+									</span>
+								</button>
+							</div>
+							<div class="desc_prod">
+								<span class="categ_item">${product.category}</span>
+								<h5 class="title_prod">${product.name}</h5>
+								<span class="price_prod">${product.price.toFixed(2)}</span>
+							</div>
+						</div>
+					`;
+					productContainer.insertAdjacentHTML("beforeend", productHTML);
+				});
+
+				// Add event listeners to buttons after products are loaded
+				initializeAddToCartButtons(products);
+			}
+
+			function initializeAddToCartButtons(products) {
+				let btnsAddProduct = document.querySelectorAll(".btn_add_prod");
+
+				btnsAddProduct.forEach((btnAddProduct, index) => {
+					btnAddProduct.addEventListener("click", () => {
+						btnAddProduct.classList.add("active");
+						handleAddToCart(index, products);
+					});
+				});
+			}
+
+			async function handleAddToCart(indexProduct, products) {
+				const product = products[indexProduct];
+				if (!product) {
+					console.error("Product not found!");
+					return;
+				}
+
+				const cartList = document.querySelector(".cart_list");
+				const existingCartItem = document.querySelector(`#product_cart_${indexProduct}`);
+
+				if (existingCartItem) {
+					console.log("Product already in the cart!");
+					return;
+				}
+
+				const cartItem = document.createElement("li");
+				cartItem.classList.add("item_cart");
+
+				cartItem.innerHTML = `
+					<div class="desc_item_cart">
+					<p class="name_item_cart">${product.name}</p>
+					<p class="infor_order_item_cart">
+					<span class="qtd_item_cart">1</span>
+					<span class="unit_item_cart_price">${product.price.toFixed(2)}</span>
+					<span class="total_item_cart_price">${product.price.toFixed(2)}</span>
+					</p>
+					</div>
+					<button class="btn_remove_item_cart"><img src="assets/images/icon-remove-item.svg" alt="X"></button>
+				`;
+
+				cartItem.id = `product_cart_${indexProduct}`;
+
+				// Add event listener to remove button
+				const removeButton = cartItem.querySelector(".btn_remove_item_cart");
+				removeButton.addEventListener("click", () => {
+					cartItem.remove();
+					const productButton = document.querySelector(`#item_product_list_${indexProduct} .btn_add_prod`);
+					if (productButton) {
+						productButton.classList.remove("active");
+					}
+					updateCartQuantity();
+					updateCartTotal();
+				});
+
+				cartList.appendChild(cartItem);
+
+				// Add event listeners for increment and decrement buttons
+				const incrementButton = document.querySelector(`#item_product_list_${indexProduct} .btn_increment_prod`);
+				const decrementButton = document.querySelector(`#item_product_list_${indexProduct} .btn_decrement_prod`);
+				const quantityElement = cartItem.querySelector(".qtd_item_cart");
+				const totalItemPriceElement = cartItem.querySelector(".total_item_cart_price");
+
+				incrementButton.addEventListener("click", () => {
+					let quantity = parseInt(quantityElement.textContent);
+					quantity++;
+					quantityElement.textContent = quantity;
+
+					// Update total price for the item
+					const totalItemPrice = product.price * quantity;
+					totalItemPriceElement.textContent = totalItemPrice.toFixed(2);
+
+					// Update cart total
+					updateCartTotal();
+
+					// Update quantity in the product list
+					const productQuantityElement = document.querySelector(`#item_product_list_${indexProduct} .qtd_item_in_cart`);
+					productQuantityElement.textContent = quantity;
+				});
+
+				decrementButton.addEventListener("click", () => {
+					let quantity = parseInt(quantityElement.textContent);
+					if (quantity > 1) {
+						quantity--;
+						quantityElement.textContent = quantity;
+
+						// Update total price for the item
+						const totalItemPrice = product.price * quantity;
+						totalItemPriceElement.textContent = totalItemPrice.toFixed(2);
+
+						// Update cart total
+						updateCartTotal();
+
+						// Update quantity in the product list
+						const productQuantityElement = document.querySelector(`#item_product_list_${indexProduct} .qtd_item_in_cart`);
+						productQuantityElement.textContent = quantity;
+					}
+				});
+
+				updateCartQuantity();
+				updateCartTotal();
+			}
+
+			function updateCartQuantity() {
+				const cartQuantity = document.querySelector("#cart-quantity");
+				const cartItems = document.querySelectorAll(".cart_list .item_cart");
+				cartQuantity.textContent = cartItems.length;
+			}
+
+			function updateCartTotal() {
+				const cartItems = document.querySelectorAll(".cart_list .item_cart");
+				let total = 0;
+
+				cartItems.forEach((item) => {
+					const price = parseFloat(item.querySelector(".unit_item_cart_price").textContent);
+					const quantity = parseInt(item.querySelector(".qtd_item_cart").textContent);
+					total += price * quantity;
+				});
+
+				const totalPriceElement = document.querySelector(".total_price_cart");
+				totalPriceElement.textContent = total.toFixed(2);
+			}
+
+			// Load products on page load
+			await loadProducts();
+		});
+	</script>
+
+	</script>
+</body>
+
+</html>
